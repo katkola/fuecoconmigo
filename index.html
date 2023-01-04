@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src=""></script>
     <title>fue con coco</title>
+    <!-- This is a single file (non-modularized) version of the project for Github Pages Deployment -->
 </head>
 <style type="text/css">
     *{
@@ -21,8 +22,8 @@
     }
     #bg-center{
         margin: auto;
-        height: 500px;
-        width: 500px;
+        height:fit-content;
+        width: fit-content;
     }
     .navbar{
         margin: auto;
@@ -47,38 +48,46 @@
     }
     .bigfue{
         margin: 0 auto;
+        top: center;
         background-image: url("https://archives.bulbagarden.net/media/upload/thumb/c/cb/Fuecoco.png/250px-Fuecoco.png");
         background-repeat: no-repeat;
         background-size: 100%;
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
+    }
+    #footer{
+        bottom:40px;
     }
 </style>
 <body class="bg-primary">
     <div id="bg-main" class="">
-        <div class="btn-primary" onclick="sourceLinks()">Show Player</div>
+        <div class="btn-primary" onclick="sourceLinks()">Show Player- Start/Stop Music</div>
         <div class="" id="copyInfo" hidden="true">
             <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164638406&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164638406&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
         
         </div>
         <div id="bg-center">
             <div class='bigfue' onclick="startGame()" style='left:250px; top:250px;'></div>
         </div>
-        <div class="navbar fixed-bottom rounded-lg">
-            <button onclick="startGroovy()">Groove</button>
-            <button onclick="addCroc()">Add Croc</button>
-            <button onclick="clearScreen()">Restart</button>
-        </div>
-        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-            <a href="https://soundcloud.com/kerokerobonito" title="Kero Kero Bonito" target="_blank"
-                style="color: #cccccc; text-decoration: none;">Kero Kero Bonito</a> · <a
-                href="https://soundcloud.com/kerokerobonito/pocket-crocodile" title="Pocket Crocodile" target="_blank"
-                style="color: #cccccc; text-decoration: none;">Pocket Crocodile</a>
-        </div>
-        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-            <a href="https://soundcloud.com/kerokerobonito"
-                style="color: #cccccc; text-decoration: none;">Fuecoco © 2022 Pokémon. © 1995–2022 Nintendo/Creatures Inc./GAME FREAK inc.</a>
+        <div class="text-center font-weight-bolder">Click Me to Start</div>
+        
+            <div class="navbar fixed-bottom rounded-lg">
+                <button onclick="startGroovy()">Groove</button>
+                <button onclick="addCroc()">Add Croc</button>
+                <button onclick="clearScreen()">Restart</button>
+            </div>
+            <div id="footer" class="fixed-bottom">
+                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/kerokerobonito" title="Kero Kero Bonito" target="_blank"
+                        style="color: #cccccc; text-decoration: none;">Kero Kero Bonito</a> · <a
+                        href="https://soundcloud.com/kerokerobonito/pocket-crocodile" title="Pocket Crocodile" target="_blank"
+                        style="color: #cccccc; text-decoration: none;">Pocket Crocodile</a>
+                </div>
+                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/kerokerobonito"
+                        style="color: #cccccc; text-decoration: none;">Fuecoco © 2022 Pokémon. © 1995–2022 Nintendo/Creatures Inc./GAME FREAK inc.</a>
+                </div>
         </div>
     </div>
 </body>
@@ -189,7 +198,7 @@
         else if(crocs[idx].left<20){
             return true;
         }
-        else if(crocs[idx].left>400){
+        else if(crocs[idx].left>viewport_width){
             return true;
         }
         else{
