@@ -242,8 +242,8 @@
 
     // add another boi
     function addCroc(){
-        newLeft = Math.floor(Math.random()*399)+2;
-        newTop = Math.floor(Math.random()*399)+2;
+        newLeft = Math.floor(Math.random()*viewport_width)+2;
+        newTop = Math.floor(Math.random()*viewport_width)+2;
         newSwoosh = Math.floor(Math.random() * 2)-1;
         newFly = 1;
         crocs.push({left: newLeft, top: newTop, swoosh:newSwoosh, fly: newFly, flip:false});
