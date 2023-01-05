@@ -47,8 +47,6 @@
         height: 90px;
     }
     .bigfue{
-        margin: 0 auto;
-        top: center;
         background-image: url("https://archives.bulbagarden.net/media/upload/thumb/c/cb/Fuecoco.png/250px-Fuecoco.png");
         background-repeat: no-repeat;
         background-size: 100%;
@@ -60,19 +58,18 @@
     }
 </style>
 <body class="bg-primary">
-    <div id="bg-main" class="">
+    <div id="bg-main" class="flex-column">
         <div class="btn-primary" onclick="sourceLinks()">Show Player- Start/Stop Music</div>
         <div class="" id="copyInfo" hidden="true">
             <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164638406&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
-        
         </div>
         <div id="bg-center">
             <div class='bigfue' onclick="startGame()" style='left:250px; top:250px;'></div>
         </div>
         <div class="text-center font-weight-bolder">Click Me to Start</div>
         
-            <div class="navbar fixed-bottom rounded-lg">
+            <div class="navbar fixed-bottom rounded-lg m-auto">
                 <button onclick="startGroovy()">Groove</button>
                 <button onclick="addCroc()">Add Croc</button>
                 <button onclick="clearScreen()">Restart</button>
